@@ -1,0 +1,343 @@
+.dishBg {
+  filter: blur(60px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.dishTop {
+  display: flex;
+  color: white;
+  align-items: center;
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+}
+
+.topName {
+  margin-left: 50rpx;
+}
+
+.allTop {
+  width: 750rpx;
+  height: 700rpx;
+}
+
+.top {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.c-pop {
+  font-size: 24rpx;
+}
+
+.coverImgUrl {
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: 20rpx;
+}
+
+.left {
+  margin-left: 30rpx;
+}
+
+.tracksName {
+  font-size: 34rpx;
+  line-height: 55rpx;
+  font-weight: bold;
+}
+
+.wangYi {
+  margin-top: 80rpx;
+  width: 270rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.creatorNickname {
+  margin-left: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -weblit-line-clamp: 3;
+}
+
+.songSheet-right {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.song-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 70rpx;
+}
+
+.description {
+  font-size: 22rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.sheet-img {
+  text-align: center;
+  color: white;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sheet-icons {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.playCollect {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.sheet-content {
+  padding: 20rpx 30rpx;
+  margin-top: 30rpx;
+  background: white;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}
+
+.paly-all {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.sheet-play {
+  margin-left: 40rpx;
+}
+
+.sheet-play-songs {
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #8c8c8c;
+}
+
+.sheet-collect {
+  background: #c20c0c;
+  color: white;
+  display: flex;
+  justify-content: right;
+  font-size: 26rpx;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  border-radius: 40rpx;
+}
+
+.songSheet-add {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.sheet-collectCount {
+  font-size: 24rpx;
+}
+
+/* 循环体 */
+
+.hotBox {
+  color: #b6b6b6;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.indexName {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.sheet-horn-box {
+  width: 60rpx;
+}
+
+.sheet-horn {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.indexNum {
+  font-size: 30rpx;
+  width: 80rpx;
+}
+
+.songName {
+  color: black;
+  font-size: 32rpx;
+}
+
+/* 底部 */
+
+.playingMusic {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-top: 2rpx solid #bebbbb;
+  padding: 10rpx 20rpx;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.playing-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.playing-name {
+  line-height: 50rpx;
+}
+
+.playing-songs {
+  font-size: 26rpx;
+  /* overflow: hidden; */
+  width: 400rpx;
+  /* animation: rowup 5s linear infinite; */
+  white-space: nowrap;
+  z-index: -1;
+}
+
+.playing-singer {
+  font-size: 24rpx;
+  color: #b6b6b6;
+}
+
+.playing-control {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+@keyframes rowup {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-400rpx);
+  }
+}
+
+.change-control {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.playing-control-left {
+  margin-left: 40rpx;
+}
+
+/* 专辑歌手详情 */
+
+.inform-font {
+  color: #8c8c8c;
+}
+
+.inform-img {
+  margin: 180rpx 0 60rpx 0;
+  display: flex;
+  justify-content: center;
+}
+
+.inform-coverImgUrl {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.inform-tracksName {
+  text-align: center;
+  font-size: 40rpx;
+  color: white
+}
+
+.inform-company {
+  padding: 30rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+.inform-subType{
+  margin-bottom: 30rpx;
+  line-height: 60rpx
+}
+
+.inform-description{
+  line-height: 50rpx
+}
+
+/* //歌曲弹出层 */
+
+.song-list-play-top {
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #bebbbb;
+}
+
+.sheet-horn-box {
+  width: 60rpx;
+}
+
+.sheet-horn {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.song-list-play-method {
+  display: flex;
+  align-items: center;
+}
+
+.song-list-play-word {
+  margin: 0 30rpx;
+}
+
+.song-list-big-box {
+  padding: 20rpx 30rpx;
+  line-height: 80rpx
+}
+
+.song-list-box-song {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sheet-icons-delsongs {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.song-list-box-song-ar{
+  width: 550rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}

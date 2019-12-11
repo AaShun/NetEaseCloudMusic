@@ -1,0 +1,42 @@
+<scroll-view scroll-y="true" style="height: 1000rpx;" bindscrolltolower="lower">
+  <!-- 播放与收藏 -->
+
+  <view class="sheet-content">
+
+    <view class="playCollect">
+      <view class="paly-all">
+        <view>
+          <image class="sheet-icons" src="../../../icons/music-playing.png"></image>
+        </view>
+        <view class="sheet-play">
+          播放全部
+        </view>
+      </view>
+
+      <view class="sheet-collect">
+        <van-icon name="bars" />
+        <view class="sheet-play">多选</view>
+      </view>
+    </view>
+
+    <!-- 循环内容 -->
+    <view wx:for="{{keysList}}" wx:key="index" class="hotBox">
+
+      <view class="indexName" bindtap="changeImg" data-horn="{{index}}" data-id="{{item.id}}">
+        <view>
+          <view class="songName">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="item-ar-name">
+            <text>{{item.artists[0].name}}</text>-{{item.album.name}}</view>
+        </view>
+      </view>
+      <view>
+        <image class="sheet-icons" src="../../../icons/sheet-song-plag.png"></image>
+        <image class="sheet-icons" src="../../../icons/sheet-song-tan.png"></image>
+      </view>
+    </view>
+
+
+  </view>
+</scroll-view>

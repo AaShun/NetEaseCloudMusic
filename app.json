@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/singer/singer",
+    "pages/mine/mine",
+    "pages/singersong/singersong",
+    "pages/songSheet/songSheet",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/editMine/editMine",
+    "pages/dishDetail/dishDetail",
+    "pages/daySongs/daySongs",
+    "pages/playbackPage/playbackPage",
+    "pages/radioDetails/radioDetails",
+    "pages/searchDetail/searchDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#cb1c36",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#393939",
+    "selectedColor": "#d4465b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icons/home.png",
+        "selectedIconPath": "/icons/homeCilick.png"
+      },
+      {
+        "pagePath": "pages/singer/singer",
+        "text": "歌手",
+        "iconPath": "/icons/microphone.png",
+        "selectedIconPath": "/icons/microphoneCilick.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/icons/mine.png",
+        "selectedIconPath": "/icons/mineCilick.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "lib/vant/button/index"
+  },
+  "requiredBackgroundModes": [
+    "autio"
+  ]
+}

@@ -1,0 +1,186 @@
+<import src="../../lib/wxParse/wxParse.wxml" />
+
+<!-- <view class="radio-all"> -->
+<view class="dishBg">
+  <image class="allsTop" src="{{radioList.picUrl}}"></image>
+</view>
+
+
+<view class="dishTop">
+  <view bindtap="goBack">
+    <image class="sheet-icons" src="../../icons/dishDetail-retrun.png"></image>
+  </view>
+  <view class="topName">电台</view>
+</view>
+
+
+<view class="radio-star">
+  <view>
+    <view> {{radioList.name}}</view>
+    <view class="radio-subCount"> {{radioList.subCount}}人已订阅</view>
+  </view>
+
+  <view class="radio-title-star">
+
+    <van-icon name="star-o" /> 订阅
+  </view>
+
+</view>
+
+
+<!-- 内容体 -->
+<van-popup show="{{ radio }}" round position="bottom" custom-style="height: 57%" overlay="{{false}}">
+
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <!-- 详情 -->
+    <van-tab title="详情">
+      <scroll-view scroll-y="true" style="height: 670rpx;">
+        <view class="radio-active-dj-player">
+          <view class="radio-active-dj-main">主播</view>
+          <view class="radio-active-dj-main-avatar">
+            <view class="radio-active-dj">
+
+              <view>
+                <image class="radio-active-dj-avatarUrl" src="{{radioList.dj.avatarUrl}}"></image>
+              </view>
+
+              <view class="radio-active-dj-name">
+                <view>{{radioList.dj.nickname}}</view>
+                <view class="radio-active-dj-description">
+                  {{radioList.dj.description}}
+                </view>
+              </view>
+            </view>
+            <view>
+              <van-icon name="arrow" size="50rpx" />
+            </view>
+          </view>
+
+          <view class="radio-active-dj-main">电台内容介绍</view>
+
+          <view>
+            <view class="radio-active-danger">
+              <view>分类：</view>
+              <view>
+                <van-tag plain type="danger">{{radioList.category}}</van-tag>
+              </view>
+            </view>
+
+            <view class="radio-active-wxParse">
+              <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+            </view>
+
+          </view>
+
+
+          <view class="radio-active-dj-main">精彩评论</view>
+          <view wx:for="{{radioList.commentDatas}}" wx:key="index">
+            <view class="radioList-comment">
+              <view>
+                <image class="radioList-comment-img" src="{{item.userProfile.avatarUrl}}"></image>
+              </view>
+              <view>{{item.userProfile.nickname}}</view>
+            </view>
+
+            <view class="radioList-comment-content">{{item.content}}</view>
+
+            <view class="radioList-rcmdText">--{{radioList.rcmdText}}</view>
+
+          </view>
+
+
+        </view>
+      </scroll-view>
+    </van-tab>
+
+
+    <van-tab title="节目" info="{{radioList.programCount}}">
+
+      <view class="radio-active-dj-player">
+        <view class="programList-top">
+          <view class="radio-activeprogramList">
+            共{{count}}期
+          </view>
+          <view class="programList-top-right">
+
+            <view class="programList-icons">
+              <view bindtap="topDown" data-top="{{1}}" wx:if="{{top===2}}">
+                <image class="programList-img" src="../../icons/programList-down.png"></image>
+              </view>
+              <view bindtap="topDown" data-top="{{2}}" wx:if="{{top===1}}">
+                <image class="programList-img" src="../../icons/programList-top.png"></image>
+              </view>
+              <view> 排序</view>
+            </view>
+
+            <view class="programList-icons">
+              <view>
+                <image class="programList-img" src="../../icons/programList-more.png"></image>
+              </view>
+              <view> 多选</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- //循环体 -->
+        <scroll-view scroll-y="true" style="height: 550rpx;" bindscrolltolower="lower">
+          <view wx:for="{{songsList}}" wx:key="index" class="hotBox">
+            <view class="indexName" bindtap="changeImg" data-horn="{{index}}" data-item="{{item}}">
+
+              <view class="indexNum" wx:if="{{horn!== index}}">{{item.serialNum}}</view>
+              <view wx:if="{{horn=== index}}" class="sheet-horn-box">
+                <image class="sheet-horn" src="../../icons/song-horn.png"></image>
+              </view>
+              <view>
+
+                <view class="songName">{{item.name}}</view>
+
+                <view class="radio-times">
+                <view>{{item.createTime}}</view>
+                  <view>
+                    <van-icon name="play-circle-o" />
+                    {{item.listenerCount}}
+                  </view>
+                  <view>
+                    <van-icon name="underway-o" />
+                    {{item.duration}}
+                  </view>
+                </view>
+              </view>
+            </view>
+
+            <view>
+              <image class="sheet-icons" src="../../icons/sheet-song-tan.png"></image>
+            </view>
+          </view>
+
+        </scroll-view>
+      </view>
+
+    </van-tab>
+
+  </van-tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</van-popup>

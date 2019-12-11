@@ -1,0 +1,28 @@
+.radio{
+  font-weight: bold;
+  font-size: 34rpx
+}
+
+.keysList{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20rpx 0
+}
+
+.picUrl{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx
+}
+
+.artists{
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  line-height: 50rpx
+}
+
+.publishTime{
+  font-size: 24rpx;
+  color: #666;
+}

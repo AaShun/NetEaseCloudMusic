@@ -1,0 +1,14 @@
+<view class="recommend">
+  <view class="songs">音乐新势力</view>
+  <view class="sheet">新音乐</view>
+</view>
+
+<view class="listImg">
+  <view wx:for="{{newSong}}" wx:key="index" class="listBox" bindtap="goPage" data-id="{{item.id}}">
+    <view>
+      <image class="img" src="{{item.song.album.picUrl}}"></image>
+    </view>
+
+    <view class="listName">{{item.name}}</view>
+  </view>
+</view>

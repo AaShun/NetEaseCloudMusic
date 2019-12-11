@@ -1,0 +1,105 @@
+<view class="search-all">
+
+  <!-- 搜索栏 -->
+  <view class="search-all-top">
+    <view bindtap="goBack">
+      <van-icon name="arrow-left" size="50rpx" />
+    </view>
+
+    <view class="search-all-input">
+      <input placeholder="{{placeholder}}" value="{{value}}" bindconfirm="confirm" bindinput="change"></input>
+    </view>
+
+    <view>
+      <van-icon name="user-o" size="50rpx" />
+    </view>
+
+  </view>
+
+  <!-- 搜索框有内容时弹出层 -->
+  <van-popup show="{{ show }}" custom-style="height:60%;width:650rpx;margin-top:120rpx;box-shadow: 1px 1px 6px 6px #ddd;" position="top" round overlay-style="opacity: 0.3" bind:click-overlay="onClose">
+    <view class="overlay">
+      <view class="search-words">搜索“{{value}}”</view>
+      <view class="search-word" wx:for="{{suggestion}}" wx:key="index">
+        <view bindtap="suggestion" data-value="{{item.keyword}}">
+          <van-icon name="search" size="40rpx" /> {{item.keyword}}
+        </view>
+      </view>
+    </view>
+  </van-popup>
+
+  <!-- 标签栏 -->
+
+
+  <!-- 传值有问题 -->
+
+  <van-tabs active="{{active}}">
+    <van-tab title="综合">
+
+      <comprehensive value="{{value}}" bind:getActive="getAct"></comprehensive>
+
+    </van-tab>
+
+    <van-tab title="单曲">
+
+      <single value="{{value}}"></single>
+
+    </van-tab>
+
+    <van-tab title="视频">
+
+      <vision value="{{value}}"></vision>
+
+    </van-tab>
+    <van-tab title="歌手">
+
+      <singers value="{{value}}"></singers>
+
+    </van-tab>
+    <van-tab title="专辑">
+
+      <album value="{{value}}"></album>
+
+    </van-tab>
+    <van-tab title="歌单">
+
+      <songsheet value="{{value}}"></songsheet>
+
+    </van-tab>
+    <van-tab title="主播电台">
+      <anchorstation value="{{value}}"></anchorstation>
+    </van-tab>
+    <van-tab title="用户">
+
+      <consumer value="{{value}}"></consumer>
+
+    </van-tab>
+  </van-tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

@@ -1,0 +1,42 @@
+<view class="allSingers">
+  <scroll-view scroll-x class="scroll" style="width: 100%;">
+    <view class="singerType">
+      <view wx:for="{{singer}}" wx:key="index">
+        <view class="types {{num===item.cat?'border':''}}" bindtap="singerCilic" data-cat="{{item.cat}}">{{item.type}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <scroll-view class="singersResident" wx:if="{{num === 5001}}" scroll-y="true">
+    <view wx:for="{{singerDetails}}" wx:key="index" class="singersDet" bindtap="goSong" data-id="{{item.id}}" data-title="{{item.name}}">
+      <view>
+        <image class="singerAvatar" src="{{item.picUrl}}"></image>
+      </view>
+      <view class="singersName">{{item.name}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="otherSingers" wx:if="{{num !==5001}}">
+  <scroll-view scroll-x class="scroll" style="width: 100%;">
+
+    <view class="singerType">
+      <view wx:for="{{letter}}" wx:key="index">
+        <view class="types {{small === item ? 'singerHot' :''}}" bindtap="letterCilic" data-small="{{item}}">{{item}}</view>
+      </view>
+
+    </view>
+  </scroll-view>
+
+<!-- 非入驻歌手 -->
+  <scroll-view scroll-y="true" class="singersDetail">
+    <view>
+      <view wx:for="{{singerDetails}}" wx:key="index" class="singersDet" bindtap="goSong" data-id="{{item.id}}" data-title="{{item.name}}">
+        <view>
+          <image class="singerAvatar" src="{{item.picUrl}}"></image>
+        </view>
+        <view class="singersName">{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

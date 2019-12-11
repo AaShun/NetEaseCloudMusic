@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+    "van-search": "../../lib/vant/search/index",
+    "van-icon": "../../lib/vant/icon/index",
+    "van-tab": "../../lib/vant//tab/index",
+    "van-tabs": "../../lib/vant//tabs/index",
+    "van-popup": "../../lib/vant/popup/index",
+
+    
+    "single": "../../components/searchPages/single/single",
+    "singers": "../../components/searchPages/singers/singers",
+    "album": "../../components/searchPages/album/album",
+    "songsheet": "../../components/searchPages/songsheet/songsheet",
+    "anchorstation": "../../components/searchPages/anchorstation/anchorstation",
+    "consumer": "../../components/searchPages/consumer/consumer",
+    "comprehensive": "../../components/searchPages/comprehensive/comprehensive",
+    "vision": "../../components/searchPages/vision/vision"
+  }
+}

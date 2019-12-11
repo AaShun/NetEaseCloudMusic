@@ -1,0 +1,55 @@
+.videoList-all {
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.videoList-coverUrl {
+  width: 300rpx;
+  height: 220rpx;
+}
+
+.videoList-vision-img {
+  position: relative;
+  color: white;
+  font-size: 24rpx;
+}
+
+.videoList-vision-playtime {
+  position: absolute;
+  top: 6rpx;
+  right: 10rpx;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.videoList-mlogList--play {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.videoList-word {
+  padding-left: 30rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.videoList-creator {
+  padding-top: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+}
+
+.videoList-durationms {
+  margin-right: 20rpx;
+}
+
+.videoList-userName{
+  width: 270rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

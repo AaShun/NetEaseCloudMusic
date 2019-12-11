@@ -1,0 +1,42 @@
+.editMine{
+  background: #fafafa
+}
+
+.edit-mine{
+  margin: 80rpx 20rpx;
+  border: 2rpx solid #fac0c0;
+  border-radius: 40rpx
+}
+
+.checkEdit{
+   margin: 200rpx auto;
+   text-align: center;
+   background: #ea4848;
+   color: white;
+   width: 300rpx;
+   padding: 20rpx 30rpx;
+   border-radius: 50rpx
+}
+
+.change-gender{
+  padding: 100rpx 100rpx;
+  font-size: 36rpx;
+  text-align: center
+}
+
+.genders{
+  line-height: 80rpx;
+  border: 2rpx solid #ea4848;
+  margin: 20rpx 0;
+  border-radius: 40rpx
+}
+
+.bgColor{
+  background: #ea4848;
+  color: white;
+  border-radius: 80rpx
+}
+
+.sex{
+  width: 300rpx;
+}

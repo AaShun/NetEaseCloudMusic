@@ -1,0 +1,8 @@
+.banner{
+  height: 280rpx;
+  padding:0 6rpx
+}
+
+.image{
+  border-radius: 20rpx
+}

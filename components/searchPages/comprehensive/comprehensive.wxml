@@ -1,0 +1,319 @@
+<scroll-view scroll-y="true" style="height: 1000rpx;">
+
+  <view class="all">
+
+
+
+    <!-- 单曲 -->
+
+    <view class="singleList-sheet-content">
+
+      <view class="singleList-playCollect">
+        <view class="singleList-sheet-collect">
+          单曲
+        </view>
+
+
+        <view class="singleList-paly-all">
+          <view>
+            <image class="singleList-sheet-icons-play" src="../../../icons/music-playing.png"></image>
+          </view>
+          <view>播放全部</view>
+        </view>
+
+
+      </view>
+
+      <!-- 循环内容 -->
+      <view wx:for="{{list.song.songs}}" wx:key="index" class="singleList-hotBox">
+
+        <view class="singleList-indexName" bindtap="changeImg" data-horn="{{index}}" data-id="{{item.id}}">
+          <view>
+            <view class="singleList-songName">
+              {{item.name}}
+            </view>
+            <view class="singleList-item-ar-name">
+              <text>{{item.ar[0].name}}</text>-{{item.al.name}}</view>
+          </view>
+        </view>
+        <view>
+          <image class="singleList-sheet-icons" src="../../../icons/sheet-song-plag.png"></image>
+          <image class="singleList-sheet-icons" src="../../../icons/sheet-song-tan.png"></image>
+        </view>
+      </view>
+      <!-- 查看全部好多条 -->
+      <view class="moreText" bindtap="bindCode" data-active="{{1}}">{{list.song.moreText}} ＞</view>
+
+    </view>
+
+
+    <!-- 图片 -->
+
+
+
+    <!-- 视频 -->
+
+    <view>
+
+      <view class="public-class">视频</view>
+
+      <view wx:for="{{list.video.videos}}" wx:key="index">
+        <view class="videoList-all">
+          <view class="videoList-vision-img">
+            <image class="videoList-coverUrl" src="{{item.coverUrl}}"></image>
+            <view class="videoList-vision-playtime">
+              <view>
+                <image class="videoList-mlogList--play" src="../../../icons/home-play.png"></image>
+              </view>
+              <view> {{item.playTime}}</view>
+            </view>
+          </view>
+          <view class="videoList-word">
+            <view>{{item.title}}</view>
+            <view class="videoList-creator">
+              <view class="videoList-durationms">{{item.durationms}}</view>
+              <view videoList-userName>{{item.creator[0].userName}}</view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.video.moreText}} ＞</view>
+
+    </view>
+
+
+
+    <!-- 歌单 -->
+
+    <view>
+      <view class="public-class">歌单</view>
+
+      <view wx:for="{{list.playList.playLists}}" wx:key="index">
+        <view class="songList-keysList" bindtap="goPage" data-id="{{item.id}}">
+          <view>
+            <image class="songList-picUrl" src="{{item.coverImgUrl}}"></image>
+          </view>
+          <view class="songList-artists">
+            <view>{{item.name}}</view>
+            <view class="songList-publishTime">
+              <view>{{item.trackCount}}首 by {{item.creator.nickname}},播放{{item.playCount}}次</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.playList.moreText}} ＞</view>
+    </view>
+
+
+
+    <!-- 相关搜索 -->
+
+    <view>
+      <view class="public-class">相关搜索</view>
+      <view class="searchList-all">
+        <view wx:for="{{list.sim_query.sim_querys}}" wx:key="index">
+          <view class="searchList-keyword">{{item.keyword}}</view>
+        </view>
+      </view>
+
+    </view>
+
+
+    <!-- mlog -->
+
+    <view>
+      <view class="public-class">Mlog</view>
+      <view class="mlogList-all">
+        <view wx:for="{{list.mlog.mlogs}}" wx:key="index" class="mlogList-box">
+
+          <view class="mlogList-match">
+            <image class="mlogList-coverUrl" src="{{item.resource.mlogBaseData.coverUrl}}"></image>
+            <view class="mlogList-mlogPlay">
+              <image class="mlogList--play" src="../../../icons/home-play.png"></image>
+            </view>
+            <view class="mlogList-content">{{item.matchFieldContent}}</view>
+          </view>
+
+
+
+
+          <view class="mlogList-mlogBaseData">{{item.resource.mlogBaseData.text}}</view>
+
+          
+          <view class="mlogList-userProfile">
+            <view class="mlogList-userProfile-nickname">
+              <view>
+                <image class="mlogList-avatarUrl" src="{{item.resource.userProfile.avatarUrl}}"></image>
+              </view>
+              <view>{{item.resource.userProfile.nickname}}</view>
+            </view>
+
+            <view>{{item.resource.mlogExtVO.likedCount}}个赞</view>
+          </view>
+        </view>
+
+
+      </view>
+
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.mlog.moreText}} ＞</view>
+    </view>
+
+
+
+    <!-- 主题 -->
+
+    <view>
+      <view class="public-class">主题</view>
+
+      <view wx:for="{{list.talk.talks}}" wx:key="index">
+        <view class="songList-keysList" bindtap="goPage" data-id="{{item.id}}">
+          <view>
+            <image class="songList-picUrl" src="{{item.shareCover.url}}"></image>
+          </view>
+          <view class="songList-artists">
+            <view># {{item.talkName}}</view>
+            <view class="songList-publishTime">
+              <view>
+                <text>{{item.follows}}人关注 </text>
+                <text> {{item.participations}}人参与</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+
+    </view>
+
+
+
+    <!-- 歌手 -->
+    <view>
+      <view class="public-class">歌手</view>
+
+      <view wx:for="{{list.artist.artists}}" wx:key="index" class="singerList-singersDet" bindtap="goSong" data-id="{{item.id}}" data-title="{{item.name}}">
+        <view>
+          <image class="singerList-singerAvatar" src="{{item.picUrl}}"></image>
+        </view>
+        <view class="singerList-singersName">{{item.name}}</view>
+      </view>
+
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.artist.moreText}} ＞</view>
+    </view>
+
+
+
+    <!-- 专辑 -->
+    <view>
+      <view class="albumList-public-class">专辑</view>
+
+      <view wx:for="{{list.album.albums}}" wx:key="index">
+        <view class="albumList-keysList" bindtap="goPage" data-id="{{item.id}}">
+          <view>
+            <image class="albumList-picUrl" src="{{item.picUrl}}"></image>
+          </view>
+          <view class="albumList-artists">
+            <view>{{item.name}}</view>
+            <view class="albumList-publishTime">{{item.artists[0].name}} {{item.publishTime}}</view>
+          </view>
+        </view>
+
+
+      </view>
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.album.moreText}} ＞</view>
+
+    </view>
+
+
+    <!-- 电台 -->
+    <view>
+      <view class="public-class">电台</view>
+
+      <view wx:for="{{list.djRadio.djRadios}}" wx:key="index">
+        <view class="radioList-keysList" bindtap="goPage" data-id="{{item.id}}">
+          <view>
+            <image class="radioList-picUrl" src="{{item.picUrl}}"></image>
+          </view>
+          <view class="radioList-artists">
+            <view>{{item.name}}</view>
+            <view class="radioList-publishTime">
+              <view>{{item.dj.nickname}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.djRadio.moreText}} ＞</view>
+
+
+    </view>
+
+
+
+    <!-- 用户 -->
+    <view>
+      <view class="public-class">用户</view>
+
+      <view wx:for="{{list.user.users}}" wx:key="index" class="userList-alluser">
+        <view class="userList-keysList">
+          <view>
+            <image class="userList-avatarUrl" src="{{item.avatarUrl}}"></image>
+          </view>
+
+          <view class="userList-nickname">
+            <view>
+              {{item.nickname}}
+              <image wx:if="{{item.gender===1}}" class="userList-gender" src="../../../icons/gender-boy.png"></image>
+              <image wx:if="{{item.gender===2}}" class="userList-gender" src="../../../icons/gender-girl.png"></image>
+            </view>
+            <view class="userList-signature">{{item.signature}}</view>
+          </view>
+        </view>
+
+        <view class="userList-plus">
+          <van-icon name="plus" /> 关注
+        </view>
+      </view>
+
+
+
+      <!-- 查看全部好多条 -->
+      <view class="moreText">{{list.user.moreText}} ＞</view>
+
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </view>
+
+</scroll-view>

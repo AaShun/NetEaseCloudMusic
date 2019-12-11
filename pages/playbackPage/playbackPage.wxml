@@ -1,0 +1,166 @@
+<import src="../../lib/wxParse/wxParse.wxml" />
+
+<view class="dishBg">
+  <image class="allsTop" src="{{playSong.al.picUrl}}"></image>
+</view>
+
+<view class="dishTop">
+  <view bindtap="goBack">
+    <image class="sheet-icons" src="../../icons/dishDetail-retrun.png"></image>
+  </view>
+  <view class="topName-ar-name">
+    <view class="topName">{{playSong.name}}</view>
+    <view class="copywriter">{{playSong.ar[0].name}}</view>
+  </view>
+</view>
+
+
+<!-- //转盘 -->
+
+<view wx:if="{{!lyric}}">
+
+  <view class="song-circle {{!startStop ? 'stop' : ''}}" bindtap="goLyric" data-lyric="{{true}}">
+    <view class="songMsg-background">
+      <view>
+        <image class="circel-img" src="{{playSong.al.picUrl}}"></image>
+      </view>
+    </view>
+
+  </view>
+
+
+  <!-- 第一排图标 -->
+
+  <view class="playback-one">
+    <view>
+      <image wx:if="{{like === false}}" bindtap="cilckLike" data-like="{{true}}" class="playback-pageIcons" src="../../icons/playback-page-nolike.png"></image>
+      <image wx:if="{{like === true}}" bindtap="cilckLike" data-like="{{false}}" class="playback-pageIcons" src="../../icons/playback-page-chose-like.png"></image>
+    </view>
+
+    <view>
+      <image class="playback-pageIcons" src="../../icons/songSheet-down.png"></image>
+    </view>
+
+    <view>
+      <image class="playback-pageIcons" src="../../icons/playback-page-new.png"></image>
+    </view>
+
+    <view>
+      <image class="playback-pageIcons" src="../../icons/playback-page-word.png"></image>
+    </view>
+
+    <view>
+      <image class="playback-pageIcons" src="../../icons/playback-page-meuetop.png"></image>
+    </view>
+
+  </view>
+
+  <!-- 滑块播放进度条 -->
+  <view class="song-playTime">
+
+    <view>{{currentTime}}</view>
+
+    <view class="progress-stroke">
+      <van-slider value="{{ currentValue }}" use-button-slot bind:change="onDrag" active-color="#c20c0c">
+        <view class="custom-button" slot="button">
+        </view>
+      </van-slider>
+    </view>
+
+    <view>{{duration}}</view>
+
+  </view>
+
+</view>
+
+<!-- 歌词 -->
+
+<view wx:if="{{lyric}}" bindtap="goLyric" data-lyric="{{false}}">
+
+  <scroll-view scroll-y="true" class="lyric-scroll">
+
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </scroll-view>
+
+
+</view>
+
+
+
+
+<!-- 播放模式 -->
+<view class="play-button">
+  <view>
+    <image bindtap="cahngeMode" data-pid="{{pid}}" class="playback-button-pageIcons" src="{{playingMode[pid].url}}"></image>
+  </view>
+
+  
+  <!-- 上一曲 -->
+  <view bindtap="lastSong">
+    <image class="playback-button-pageIcons" src="../../icons/playback-page-next.png"></image>
+  </view>
+
+  <view>
+    <image wx:if="{{startStop === true}}" bindtap="songStart" data-startStop="{{false}}" class="playback-button-start" src="../../icons/playback-page-stop.png"></image>
+    <image wx:if="{{startStop === false}}" bindtap="songStart" data-startStop="{{true}}" class="playback-button-start" src="../../icons/playback-page-play.png"></image>
+  </view>
+
+  <!-- 下一曲 -->
+  <view bindtap="nextSong">
+    <image class="playback-button-pageIcons" src="../../icons/playback-page-add.png"></image>
+  </view>
+
+  <!-- 歌曲列表 -->
+  <view bindtap="songList" data-show="{{true}}">
+    <image class="playback-button-pageIcons" src="../../icons/playback-page-menu.png"></image>
+  </view>
+
+</view>
+
+
+<!-- 歌单列表弹出层 -->
+<view>
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 60%;" round>
+
+    <view class="song-list-play-top">
+
+
+      <view class="song-list-play-method">
+        <view>
+          <image class="sheet-horn" src="../../icons/song-list-suibian.png"></image>
+        </view>
+        <view class="song-list-play-word">随机播放</view>
+      </view>
+
+
+      <view class="song-list-play-method">
+        <view>
+          <image class="sheet-horn" src="../../icons/song-list-collect.png"></image>
+        </view>
+        <view class="song-list-play-word">收藏全部</view>
+        <view bindtap="allSong">
+          <image class="sheet-horn" src="../../icons/song-list-del.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 歌曲弹出层 -->
+    <scroll-view scroll-y="true" style="height: 700rpx;">
+      <view class="song-list-big-box">
+        <view wx:for="{{songsList}}" wx:key="index" class="song-list-box-song">
+
+          <!-- 正在播放的图标 -->
+          <view wx:if="{{horn=== index}}" class="sheet-horn-box">
+            <image class="sheet-horn" src="../../icons/song-horn.png"></image>
+          </view>
+
+          <view class="song-list-box-song-ar" bindtap="playNow" data-id="{{item.id}}" data-horn="{{index}}">{{item.name}}  {{item.ar[0].name}}</view>
+          <!-- 点击删除当前播放列表的点击歌曲 -->
+          <view bindtap="delSongs" data-songId="{{index}}">
+            <image class="sheet-icons-delsongs" src="../../icons/song-list-delsongs.png"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </van-popup>
+</view>

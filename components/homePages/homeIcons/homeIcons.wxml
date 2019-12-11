@@ -1,0 +1,8 @@
+<view class="list">
+  <view wx:for="{{icons}}" wx:key="index" bindtap="iconClick" data-path="{{item.path}}">
+    <view class="img">
+      <image class="icons" src="{{item.img}}"></image>
+    </view>
+    <view class="words">{{item.words}}</view>
+  </view>
+</view>

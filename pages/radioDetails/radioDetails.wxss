@@ -1,0 +1,235 @@
+@import '../../lib/wxParse/wxParse.wxss';
+
+/* .radio-all {
+  position: relative;
+} */
+
+.dishBg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 700rpx;
+}
+
+.allsTop {
+  width: 750rpx;
+  height: 600rpx;
+}
+
+.dishTop {
+  display: flex;
+  color: white;
+  align-items: center;
+  margin-top: 60rpx;
+  margin-left: 32rpx;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.topName {
+  margin-left: 50rpx;
+}
+
+.sheet-icons {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.radio-star {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 400rpx;
+  left: 0;
+  right: 0;
+  font-size: 34rpx;
+  font-weight: bold;
+  padding: 30rpx;
+  color: white;
+}
+
+.radio-subCount {
+  color: white;
+  font-weight: 500;
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}
+
+.radio-title-star {
+  color: white;
+  background: #c20c0c;
+  padding: 0 20rpx;
+  line-height: 60rpx;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+}
+
+/* <!-- 内容体 --> */
+
+/* 详情 */
+
+.van-ellipsis {
+  font-size: 40rpx;
+}
+
+.radio-active-dj-player {
+  padding: 30rpx;
+}
+
+.radio-active-dj-main {
+  font-weight: bold;
+  font-size: 36rpx;
+  margin: 20rpx 0;
+}
+
+.radio-active-danger{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+}
+
+.radio-active-wxParse {
+  font-size: 26rpx;
+  margin: 20rpx 0;
+  color: #333;
+  line-height: 80rpx;
+}
+
+.radio-active-dj-main-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio-active-dj {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.radio-active-dj-avatarUrl {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.radio-active-dj-name {
+  padding-left: 30rpx;
+}
+
+.radio-active-dj-description {
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}
+
+/* 精彩评论 */
+
+.radioList-comment {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.radioList-comment-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.radioList-comment-content {
+  text-align: left;
+  margin: 10rpx 20rpx 20rpx 110rpx;
+}
+
+.radioList-rcmdText {
+  text-align: left;
+  margin: 10rpx 20rpx 20rpx 110rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+
+/* 节目 */
+
+.radio-activeprogramList {
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.programList-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.programList-top-right {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.programList-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+}
+
+.programList-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+/* //循环体 */
+
+.hotBox {
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 0;
+}
+
+.indexName {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.indexNum {
+  font-size: 30rpx;
+  width: 70rpx;
+}
+
+.sheet-horn-box {
+  width: 60rpx;
+}
+
+.sheet-horn {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.radio-times{
+  display: flex;
+  align-items: center;
+  width: 400rpx;
+  margin-top: 10rpx;
+  justify-content: space-between
+}
+
+.songName {
+  color: black;
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 550rpx;
+}
+

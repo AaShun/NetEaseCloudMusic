@@ -1,0 +1,132 @@
+.search-all {
+  padding: 20rpx 30rpx;
+}
+
+.search-all-top {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 30rpx 0;
+  font-size: 30rpx;
+}
+
+.search-all-input {
+  border-bottom: 2rpx solid #666;
+  width: 450rpx;
+  text-align: center;
+}
+
+.search-imageUrl {
+  width: 100%;
+  height: 140rpx;
+  border-radius: 30rpx;
+}
+
+/* 搜索弹出层 */
+
+.overlay {
+  padding: 10rpx 30rpx;
+  font-size: 32rpx;
+  line-height: 90rpx;
+  color: #888;
+}
+
+.search-word {
+  border-bottom: 2rpx solid #ddd;
+}
+
+.search-words {
+  color: cornflowerblue;
+}
+
+/* 历史记录 */
+
+.history {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 50rpx 0 20rpx 0;
+}
+
+.scroll-x {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.history-keys {
+  display: inline-block;
+}
+
+.historyWors {
+  font-size: 26rpx;
+  background: #ddd;
+  padding: 8rpx 20rpx;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  text-align: center;
+}
+
+/* 热搜榜 */
+
+.hotList-bang {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 50rpx 0 20rpx 0;
+}
+
+.hotList-searchWord {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  font-size: 32rpx;
+}
+
+.hotList-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotList-items-content {
+  font-size: 26rpx;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  margin-top: 16rpx;
+}
+
+.hotList-index {
+  font-size: 34rpx;
+  width: 70rpx;
+  color: #666;
+}
+
+.hotList-index-searchWord{
+  color: black
+}
+
+.hotList-iconUrl {
+  height: 40rpx;
+  width: 50rpx;
+  margin-left: 30rpx;
+}
+
+.fontcolor {
+  color: #c20c0c;
+  font-weight: bold;
+}
+
+.fonts{
+  color: black;
+  font-weight: bold;
+}
+
+.hotList-score {
+  font-size: 24rpx;
+  color: #999;
+}

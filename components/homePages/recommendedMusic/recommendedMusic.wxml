@@ -1,0 +1,13 @@
+<view class="recommend">
+  <view class="songs">推荐电台</view>
+  <view class="sheet">电台广场</view>
+</view>
+
+<view class="listImg">
+  <view wx:for="{{resultLsit}}" wx:key="index" class="listBox" bindtap="goRadio" data-id="{{item.program.radio.id}}"  data-program="{{item.id}}"> 
+    <view>
+      <image class="img" src="{{item.picUrl}}"></image>
+    </view>
+    <view class="listName">{{item.name}}</view>
+  </view>
+</view>

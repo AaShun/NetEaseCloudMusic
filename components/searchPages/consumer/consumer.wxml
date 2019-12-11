@@ -1,0 +1,24 @@
+<scroll-view scroll-y="true" style="height: 1000rpx;" bindscrolltolower="lower">
+
+  <view wx:for="{{keysList}}" wx:key="index" class="alluser">
+    <view class="keysList">
+      <view>
+        <image class="avatarUrl" src="{{item.avatarUrl}}"></image>
+      </view>
+
+      <view class="nickname">
+        <view>
+          {{item.nickname}}
+          <image wx:if="{{item.gender===1}}" class="gender" src="../../../icons/gender-boy.png"></image>
+          <image wx:if="{{item.gender===2}}" class="gender" src="../../../icons/gender-girl.png"></image>
+        </view>
+        <view class="signature">{{item.signature}}</view>
+      </view>
+    </view>
+
+    <view class="plus">
+      <van-icon name="plus" /> 关注
+    </view>
+  </view>
+
+</scroll-view>

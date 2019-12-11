@@ -1,0 +1,62 @@
+.recommend{
+  font-size: 30rpx;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  display: flex;
+  justify-content: space-between
+}
+
+.songs{
+  font-weight: bold
+}
+
+.sheet{
+  border: 2rpx solid #c2c2c2;
+  border-radius: 30rpx;
+  padding:8rpx 20rpx;
+  font-size: 28rpx;
+  font-weight: 0
+}
+
+.listImg{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+
+.listBox{
+  margin: 20rpx 0;
+   position: relative
+}
+
+.img{
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 20rpx;
+ 
+}
+
+.img-play{
+position: absolute;
+font-size: 22rpx;
+color: white;
+top: 4rpx;
+right: 4rpx;
+display: flex
+}
+
+
+.home-play{
+  width: 30rpx;
+  height: 30rpx
+  }
+
+.listName{
+  width: 240rpx;
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp:2;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+}

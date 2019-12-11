@@ -1,0 +1,210 @@
+<view class="dishBg">
+  <image class="allsTop" src="{{tracks.coverImgUrl}}"></image>
+</view>
+
+<view class="dishTop">
+  <view bindtap="goBack">
+    <image class="sheet-icons" src="../../icons/dishDetail-retrun.png"></image>
+  </view>
+  <view>
+    <view class="topName">歌单</view>
+    <view class="copywriter">{{copywriter}}</view>
+  </view>
+</view>
+
+
+<view class="allTop">
+  <view class="top">
+    <view class="c-pop">
+      <view class="changeCount">
+        <view>
+          <image class="songSheet-right" src="../../icons/home-play.png"></image>
+        </view>
+        <view>{{tracks.changeCount}}</view>
+      </view>
+      <image class="coverImgUrl" src="{{tracks.coverImgUrl}}"></image>
+    </view>
+
+    <!-- 头部右边内容 -->
+    <view class="left">
+      <view class="tracksName">{{tracks.name}}</view>
+      <view class="wangYi">
+        <view>
+          <image class="avatarUrl" src="{{tracks.creator.avatarUrl}}"></image>
+        </view>
+        <view class="creatorNickname">{{tracks.creator.nickname}}</view>
+        <view>
+          <image class="songSheet-right" src="../../icons/songSheet-right.png"></image>
+        </view>
+      </view>
+
+      <view class="song-description">
+        <view class="description">
+          {{tracks.description}}
+        </view>
+        <view>
+          <image class="songSheet-right" src="../../icons/songSheet-right.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 一排图标 -->
+
+  <view class="sheet-img">
+    <view>
+      <image class="sheet-icons" src="../../icons/songSheet-news.png"></image>
+      <view>{{tracks.commentCount}}</view>
+    </view>
+
+    <view>
+      <image class="sheet-icons" src="../../icons/songSheet-share.png"></image>
+      <view>{{tracks.shareCount}}</view>
+    </view>
+
+    <view>
+      <image class="sheet-icons" src="../../icons/songSheet-down.png"></image>
+      <view>下载</view>
+    </view>
+
+    <view>
+      <image class="sheet-icons" src="../../icons/songSheet-choose.png"></image>
+      <view>{{tracks.commentCount}}</view>
+    </view>
+
+  </view>
+
+  <!-- 播放与收藏 -->
+
+  <view class="sheet-content">
+
+    <view class="playCollect">
+      <view class="paly-all">
+        <view>
+          <image class="sheet-icons" src="../../icons/music-playing.png"></image>
+        </view>
+        <view class="sheet-play">
+          <text>播放全部</text>
+          <text class="sheet-play-songs">(共{{tracks.trackCount}}首)</text>
+        </view>
+      </view>
+
+      <view class="sheet-collect">
+        <view>
+          <image class="songSheet-add" src="../../icons/songSheet-add.png"></image>
+        </view>
+        <view class="sheet-play">
+          <text>收藏</text>
+          <text class="sheet-collectCount">({{tracks.collectCount}})</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 循环内容 -->
+    <scroll-view scroll-y="true" style="height: 570rpx;">
+      <view wx:for="{{tracks.tracks}}" wx:key="index" class="hotBox">
+
+        <view class="indexName" bindtap="changeImg" data-horn="{{index}}" data-id="{{item.id}}">
+
+          <view class="indexNum" wx:if="{{horn!== index}}">{{index+1}}</view>
+          <view wx:if="{{horn=== index}}" class="sheet-horn-box">
+            <image class="sheet-horn" src="../../icons/song-horn.png"></image>
+          </view>
+
+          <view>
+            <view class="songName">
+              <text>{{item.name}}</text>
+              <text class="song-alia">{{item.alia[0]}}</text>
+            </view>
+            <view class="item-ar-name">
+              <text>{{item.ar[0].name}}</text>-{{item.al.name}}</view>
+          </view>
+        </view>
+        <view>
+          <image class="sheet-icons" src="../../icons/sheet-song-plag.png"></image>
+          <image class="sheet-icons" src="../../icons/sheet-song-tan.png"></image>
+        </view>
+
+
+      </view>
+    </scroll-view>
+
+  </view>
+
+
+  <!-- //下方播放兰 -->
+  <view wx:if="{{horn !== -1}}">
+    <view class="playingMusic" wx:for="{{playSong}}" wx:key="index">
+      <view bindtap="goPage">
+        <image class="playing-img" src="{{item.al.picUrl}}"></image>
+      </view>
+      <view class="playing-name">
+
+        <!-- 滚动 -->
+        <view class="playing-songs">
+          <text>{{item.name}}{{item.alia[0]}} </text>
+          <!-- <text> {{playSong.name}}{{playSong.alia[0]}}</text> -->
+        </view>
+
+        <view class="playing-singer">{{item.ar[0].name}}</view>
+      </view>
+
+      <view class="change-control">
+        <view>
+          <image wx:if="{{playing}}" bindtap="changeControl" data-playing="{{false}}" class="playing-control" src="../../icons/playing-stop.png"></image>
+          <image wx:if="{{!playing}}" bindtap="changeControl" data-playing="{{true}}" class="playing-control" src="../../icons/playing-playing.png"></image>
+        </view>
+        <view class="playing-control-left" bindtap="songList" data-show="{{true}}">
+          <image class="playing-control" src="../../icons/playing-menu.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 歌单列表弹出层 -->
+  <view>
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 60%;" round>
+
+      <view class="song-list-play-top">
+
+        <view class="song-list-play-method">
+          <view>
+            <image class="sheet-horn" src="../../icons/song-list-suibian.png"></image>
+          </view>
+          <view class="song-list-play-word">随机播放</view>
+        </view>
+
+
+        <view class="song-list-play-method">
+          <view>
+            <image class="sheet-horn" src="../../icons/song-list-collect.png"></image>
+          </view>
+          <view class="song-list-play-word">收藏全部</view>
+          <view bindtap="allSong">
+            <image class="sheet-horn" src="../../icons/song-list-del.png"></image>
+          </view>
+        </view>
+      </view>
+
+      <view class="song-list-big-box">
+        <view wx:for="{{songsList}}" wx:key="index" class="song-list-box-song">
+
+          <!-- 正在播放的图标 -->
+          <view wx:if="{{horn=== index}}" class="sheet-horn-box">
+            <image class="sheet-horn" src="../../icons/song-horn.png"></image>
+          </view>
+
+          <view class="song-list-box-song-ar" bindtap="playNow" data-id="{{item.id}}" data-horn="{{index}}" data-item="{{item}}">{{item.name}} - {{item.ar[0].name}}</view>
+          <!-- 点击删除当前播放列表的点击歌曲 -->
+          <view bindtap="delSongs" data-songId="{{index}}">
+            <image class="sheet-icons-delsongs" src="../../icons/song-list-delsongs.png"></image>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+
+
+</view>

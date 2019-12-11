@@ -1,0 +1,64 @@
+.allSingers {
+  padding: 10rpx 0 10rpx 20rpx;
+}
+
+.scroll {
+  color: #777;
+  width: 100%;
+  white-space: nowrap;
+  padding-right: 30rpx;
+  font-size: 30rpx;
+}
+
+.singerType {
+  display: flex;
+}
+
+.singerHot {
+  height: 30rpx;
+  width: 30rpx;
+  background: #c20c0c;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30rpx
+}
+
+.types {
+  padding: 10rpx;
+}
+
+.border {
+  border-bottom: 4rpx solid #c20c0c;
+}
+
+.singersResident {
+  padding: 30rpx 20rpx;
+  height: 980rpx
+}
+
+.singersDetail{
+  height: 920rpx
+}
+
+
+.singersDet {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 14rpx 0
+}
+
+.singerAvatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.singersName {
+  padding: 0 30rpx;
+}
+
+.otherSingers {
+  padding: 20rpx;
+}

@@ -1,0 +1,22 @@
+<view class="register">
+  <view class="registerBox">
+    <van-cell-group>
+
+      <van-field value="{{ phone }}" label="手机号" placeholder="请输入手机号" required border="{{ false }}" left-icon="phone-circle-o" bind:confirm="phoneConfirm" />
+      <van-field value="{{ password }}" type="password" label="密码" placeholder="请输入密码" required border="{{ false }}" left-icon="more-o" bind:confirm="passwordConfirm" />
+
+      <van-field value="{{ code }}" center clearable required label="短信验证码" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot left-icon="certificate"  bind:confirm="codeConfirm">
+      </van-field>
+
+      <van-field value="{{ username }}" label="用户名" left-icon="user-circle-o" required placeholder="请输入用户名" bind:confirm="usernameConfirm" />
+    </van-cell-group>
+
+    <view class="sendCode" bindtap="sendCode">发送验证码</view>
+
+  </view>
+
+  <view class="button">
+    <view class="goLog" bindtap="goLogin">前往登录</view>
+    <view class="noeReg" bindtap="nowRegister">立即注册</view>
+  </view>
+</view>

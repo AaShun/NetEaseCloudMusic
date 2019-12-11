@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "banner": "../components/homePages/banner/banner",
+    "homeIcons": "../components/homePages/homeIcons/homeIcons",
+    "recommend": "../components/homePages/recommend/recommend",
+    "recommendedMusic": "../components/homePages/recommendedMusic/recommendedMusic",
+    "newDish": "../components/homePages/newDish/newDish",
+    "recommendedProgram": "../components/homePages/recommendedProgram/recommendedProgram",
+    "newMusicPower": "../components/homePages/newMusicPower/newMusicPower",
+    "search":"../components/homePages/search/search",
+    "van-search": "../../../lib/vant/search/index"
+  }
+}

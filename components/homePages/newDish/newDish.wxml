@@ -1,0 +1,32 @@
+<view class="recommend">
+  <view>
+    <text bindtap="changeSong" data-flag="{{true}}" class="songs {{!flag ?'color' :''}}">新碟</text>
+    <text class="color"> 丨 </text>
+    <text bindtap="changeSong" data-flag="{{false}}" class="songs {{flag ?'color' : ''}}">新歌</text>
+  </view>
+  <view class="sheet">更多新歌</view>
+</view>
+
+
+<!-- 新碟 -->
+
+<view class="listImg" wx:if="{{flag===true}}">
+  <view wx:for="{{resultLsit}}" wx:key="index" class="listBox" bindtap="goSheet" data-id="{{item.id}}">
+    <view>
+      <image class="img" src="{{item.picUrl}}"></image>
+    </view>
+    <view class="listName">{{item.name}}</view>
+  </view>
+</view>
+
+<!-- 新歌 -->
+
+<view class="listImg" wx:if="{{flag===false}}">
+  <view wx:for="{{newSong}}" wx:key="index" class="listBox" bindtap="goPage" data-id="{{item.id}}">
+    <view>
+      <image class="img" src="{{item.album.blurPicUrl}}"></image>
+    </view>
+    <view class="listName">{{item.album.name}}</view>
+
+  </view>
+</view>

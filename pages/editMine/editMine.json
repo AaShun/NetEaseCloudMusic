@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-field": "../../lib/vant/field/index",
+    "van-popup": "../../lib/vant/popup/index",
+    "van-datetime-picker": "../../lib/vant/datetime-picker/index",
+    "van-dialog": "../../lib/vant/dialog/index",
+    "van-area": "../../lib/vant/area/index"
+  }
+  
+}

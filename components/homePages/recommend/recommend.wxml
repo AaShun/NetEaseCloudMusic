@@ -1,0 +1,16 @@
+<view class="recommend">
+  <view class="songs">推荐歌单</view>
+  <view class="sheet">歌单广场</view>
+</view>
+
+<view class="listImg">
+  <view wx:for="{{resultLsit}}" wx:key="index" class="listBox" bindtap="goSheet" data-id="{{item.id}}" data-copywriter="{{item.copywriter}}">
+    <view>
+      <image class="img" src="{{item.picUrl}}"></image>
+    </view>
+    <view class="img-play">
+     <view> <image class="home-play" src="../../../icons/home-play.png"></image></view>
+      <view>{{item.changeCount}}</view></view>
+    <view class="listName">{{item.name}}</view>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+.login {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  background-image: linear-gradient(#cb1c36, #f74e42);
+}
+
+.chooseLogin {
+  margin-top: 260rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.phone {
+  padding: 20rpx 60rpx;
+}
+
+.border {
+  font-size: 34rpx;
+  border-bottom: 4rpx solid white;
+}
+
+.phoneLog {
+  margin: 30rpx;
+}
+
+.goRoter {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80rpx
+}
+
+.log {
+  width: 240rpx;
+  line-height: 80rpx;
+  background: #f96a24;
+  text-align: center;
+  border-radius: 50rpx;
+  font-weight: bold
+}
+
+.register {
+  width: 240rpx;
+  line-height: 80rpx;
+  background: white;
+  color: #cb1c36;
+  text-align: center;
+  border-radius: 50rpx;
+   font-weight: bold 
+}

@@ -1,0 +1,26 @@
+.list{
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #c2c2c2
+}
+
+.img{
+  height: 74rpx;
+  width: 74rpx;
+  border-radius: 50%;
+  background: #c51f1f;
+  margin: 0 auto
+}
+
+.icons{
+  height: 50rpx;
+  width: 50rpx;
+  margin-top: 14rpx 
+}
+
+.words{
+  margin-top: 20rpx
+}

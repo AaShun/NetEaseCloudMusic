@@ -1,0 +1,22 @@
+
+
+.singersDet {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 14rpx 0
+}
+
+.singerAvatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.singersName {
+  padding: 0 30rpx;
+}
+
+.otherSingers {
+  padding: 20rpx;
+}

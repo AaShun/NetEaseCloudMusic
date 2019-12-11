@@ -1,0 +1,17 @@
+<scroll-view scroll-y="true" style="height: 1000rpx;" bindscrolltolower="lower">
+
+
+<view wx:for="{{keysList}}" wx:key="index">
+  <view class="keysList" bindtap="goPage" data-id="{{item.id}}">
+    <view>
+      <image class="picUrl" src="{{item.picUrl}}"></image>
+    </view>
+    <view class="artists">
+      <view>{{item.name}}</view>
+      <view class="publishTime">{{item.artists[0].name}} {{item.publishTime}}</view>
+    </view>
+  </view>
+
+</view>
+
+</scroll-view>

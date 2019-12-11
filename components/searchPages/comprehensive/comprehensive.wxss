@@ -1,0 +1,442 @@
+.all {
+  margin: 30rpx 0;
+}
+
+/* 单曲 */
+
+.singleList-sheet-icons {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.singleList-playCollect {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.singleList-sheet-content {
+  margin-top: 30rpx;
+  background: white;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}
+
+.singleList-paly-all {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border: 2rpx solid #999;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.singleList-sheet-icons-play {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 8rpx;
+}
+
+.singleList-sheet-play-songs {
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #8c8c8c;
+}
+
+.singleList-sheet-collect {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.singleList-songSheet-add {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.singleList-sheet-collectCount {
+  font-size: 24rpx;
+}
+
+/* 循环体 */
+
+.singleList-hotBox {
+  color: #b6b6b6;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.singleList-indexName {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.singleList-songName {
+  color: #333;
+  font-weight: bold;
+  font-size: 32rpx;
+  width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}
+
+.singleList-item-ar-name {
+  font-size: 26rpx;
+  color: #b6b6b6;
+  width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 12rpx;
+}
+
+.singleList-programList-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+}
+
+.singleList-programList-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+/* 公用最后一条 */
+
+.moreText {
+  font-size: 26rpx;
+  color: #8c8c8c;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.public-class {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: 30rpx 0;
+}
+
+/* 视频 */
+
+.videoList-all {
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.videoList-coverUrl {
+  width: 300rpx;
+  height: 220rpx;
+}
+
+.videoList-vision-img {
+  position: relative;
+  color: white;
+  font-size: 24rpx;
+}
+
+.videoList-vision-playtime {
+  position: absolute;
+  top: 6rpx;
+  right: 10rpx;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.videoList-mlogList--play {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.videoList-word {
+  padding-left: 30rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.videoList-creator {
+  padding-top: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+}
+
+.videoList-durationms {
+  margin-right: 20rpx;
+}
+
+.videoList-userName {
+  width: 270rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 歌单 */
+
+.songList-keysList {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.songList-picUrl {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+}
+
+.songList-artists {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.songList-publishTime {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 相关搜索 */
+
+.searchList-all {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.searchList-keyword {
+  background: #ddd;
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  border-radius: 20rpx;
+  margin: 10rpx 20rpx;
+}
+
+/* mlog */
+
+.mlogList-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mlogList-match {
+  position: relative;
+}
+
+.mlogList-content {
+  position: absolute;
+  top: 300rpx;
+  left: 30rpx;
+  background: black;
+  border-radius: 20rpx;
+  padding: 8rpx 12rpx;
+  color: white;
+  font-size: 24rpx;
+  opacity: 0.8;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200rpx
+}
+
+.mlogList-mlogPlay {
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  background: #666;
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.mlogList--play {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.mlogList-box {
+  width: 49%;
+  background: #bbb;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.mlogList-coverUrl {
+  width: 336rpx;
+  height: 360rpx;
+  border-radius: 30rpx;
+}
+
+.mlogList-mlogBaseData {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.mlogList-avatarUrl {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.mlogList-userProfile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 10rpx;
+  font-size: 22rpx;
+  color: #777;
+}
+
+.mlogList-userProfile-nickname {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 歌手 */
+
+.singerList-singersDet {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 14rpx 0;
+}
+
+.singerList-singerAvatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.singerList-singersName {
+  padding: 0 30rpx;
+}
+
+/* 专辑 */
+
+.albumList-keysList {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.albumList-picUrl {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+}
+
+.albumList-artists {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.albumList-publishTime {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 电台 */
+
+.radioList-radio {
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.radioList-keysList {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.radioList-picUrl {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+}
+
+.radioList-artists {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.radioList-publishTime {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 用户 */
+
+.userList-alluser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userList-keysList {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.userList-avatarUrl {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.userList-gender {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.userList-nickname {
+  margin-left: 30rpx;
+}
+
+.userList-signature {
+  font-size: 24rpx;
+  color: #666;
+  width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userList-plus {
+  color: #c20c0c;
+  border: 2rpx solid #c20c0c;
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+  width: 80rpx;
+  font-size: 24rpx;
+  text-align: center;
+}

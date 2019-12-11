@@ -1,0 +1,10 @@
+<scroll-view scroll-y="true" style="height: 1000rpx;" bindscrolltolower="lower" class="singersDetail">
+  <view>
+    <view wx:for="{{keysList}}" wx:key="index" class="singersDet" bindtap="goSong" data-id="{{item.id}}" data-title="{{item.name}}">
+      <view>
+        <image class="singerAvatar" src="{{item.picUrl}}"></image>
+      </view>
+      <view class="singersName">{{item.name}}</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,111 @@
+<view>
+  <!-- 背景图片 -->
+  <image class="artistUrl" src="{{list.artist.picUrl}}"></image>
+
+
+  <view bindtap="goBack" class="topLeft">
+    <image class="sheet-icons" src="../../icons/dishDetail-retrun.png"></image>
+  </view>
+
+
+  <view class="list-artist-name">
+    <view class="list-art-name">{{list.artist.name}} {{list.artist.alias[0]}}</view>
+    <view class="list-artist-plus">
+      <van-icon name="plus" /> 关注
+    </view>
+  </view>
+
+  <!-- 选择栏 -->
+
+  <van-tabs active="{{ active }}" bind:change="onChange">
+
+    <van-tab title="歌曲">
+
+
+      <scroll-view scroll-y="true" style="height: 750rpx;">
+
+
+        <view class="hotSongs">
+          <view class="musicPlay">
+            <view>
+              <image class="playImg" src="../../icons/music-playing.png"></image>
+            </view>
+            <view>
+              随机播放全部
+            </view>
+          </view>
+
+          <view wx:for="{{list.hotSongs}}" wx:key="index" class="hotBox">
+            <view class="indexName" bindtap="goPage" data-id="{{item.id}}">
+              <view class="indexNum">{{index+1}}</view>
+              <view>
+                <view class="songName">{{item.name}}</view>
+                <view class="singgerName">{{item.al.name}} - {{item.ar[0].name}}</view>
+              </view>
+            </view>
+            <view>
+              <image class="playImg" src="../../icons/music-playing.png"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+
+
+    </van-tab>
+
+
+
+    <van-tab title="专辑">
+
+      <scroll-view scroll-y="true" style="height: 750rpx;" bindscrolltolower="lower">
+
+
+        <view wx:for="{{albumList}}" wx:key="index">
+          <view class="keysList" bindtap="goalbum" data-id="{{item.id}}">
+            <view>
+              <image class="picUrl" src="{{item.blurPicUrl}}"></image>
+            </view>
+            <view class="artists">
+              <view>{{item.name}}</view>
+              <view class="publishTime">{{item.artists[0].name}} {{item.publishTime}} 歌曲{{item.size}}</view>
+            </view>
+          </view>
+
+        </view>
+
+      </scroll-view>
+    </van-tab>
+
+
+    <van-tab title="视频" id="{{id}}">
+
+
+      <scroll-view scroll-y="true" style="height: 750rpx;" bindscrolltolower="lower">
+
+        <view wx:for="{{radioList}}" wx:key="index">
+          <view class="videoList-all">
+            <view class="vision-img">
+              <image class="videoList-coverUrl" src="{{item.imgurl}}"></image>
+              <view class="vision-playtime">
+                <view>
+                  <image class="mlogList--play" src="../../icons/home-play.png"></image>
+                </view>
+                <view>{{item.playCount}}</view>
+              </view>
+            </view>
+            <view class="videoList-word">
+              <view>{{item.name}}</view>
+              <view class="videoList-creator">
+              {{item.artistName}}
+               {{item.publishTime}}
+              </view>
+            </view>
+          </view>
+
+        </view>
+
+      </scroll-view>
+
+    </van-tab>
+  </van-tabs>
+</view>

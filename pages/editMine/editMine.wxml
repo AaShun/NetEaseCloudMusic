@@ -1,0 +1,47 @@
+<view class="editMine">
+  <view class="edit-mine">
+    <van-cell-group>
+      <van-field value="{{ nickname }}" clearable label="昵称" placeholder="{{nickname}}" bind:click-icon="onClickIcon" left-icon="like-o" input-align="right" bind:confirm="nicknameEdit" />
+
+      <view bindtap="showGender" data-chooseGender="{{true}}">
+        <van-field value="{{ gender }}" clearable label="性别" disabled placeholder="{{gender}}" bind:click-icon="onClickIcon" left-icon="flower-o" input-align="right" />
+      </view>
+
+      <view bindtap="showPopup" data-show="{{true}}">
+        <van-field value="{{ birthday }}" clearable label="生日" disabled placeholder="{{birthday}}" bind:click-icon="onClickIcon" left-icon="point-gift-o" input-align="right" />
+      </view>
+
+      <view bindtap="chooseCity" data-chooseCit="{{true}}">
+        <van-field value="{{province}}{{ city }}" clearable label="城市" disabled placeholder="{{city}}" bind:click-icon="onClickIcon" left-icon="hotel-o" input-align="right" />
+
+      </view>
+
+      <van-field value="{{ signature }}" clearable label="签名" placeholder="{{user.profile.signature}}" bind:click-icon="onClickIcon" left-icon="star-o" input-align="right" bind:confirm="signatureEdit" />
+
+    </van-cell-group>
+
+  </view>
+  <!-- 性别选择 -->
+  <van-popup show="{{ chooseGender }}" bind:close="onClose">
+    <view class="change-gender">
+      <view wx:for="{{changeGender}}" wx:key="index" class="genders">
+        <view class="sex {{gender===item.sex ? 'bgColor' :''}}" bindtap="chooseSex" data-sex="{{item.sex}}" data-gid="{{item.gid}}">{{item.sex}}</view>
+      </view>
+    </view>
+
+  </van-popup>
+
+
+  <!-- 生日选择 -->
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 50%;">
+
+    <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" formatter="{{ formatter }}" max-date="{{ maxDate }}" min-date="{{minDate}}" bind:cancel="cancel" bind:confirm="confirm" />
+
+  </van-popup>
+  <!-- 地区选择 -->
+  <van-popup show="{{ choosecit }}" bind:close="onClose" position="bottom" custom-style="height: 50%;">
+    <van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" title="选择城市" bind:cancel="cancel" bind:confirm="confirmCity"/>
+  </van-popup>
+
+  <view class="checkEdit" catchtap="checkMsg">确认修改</view>
+</view>

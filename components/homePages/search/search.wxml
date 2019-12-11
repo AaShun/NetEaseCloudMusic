@@ -1,0 +1,86 @@
+<view class="search-all">
+
+  <view class="search-all-top">
+    <view bindtap="cancel">
+      <van-icon name="arrow-left" size="50rpx" />
+    </view>
+
+    <view class="search-all-input">
+      <input placeholder="{{placeholder}}" value="{{value}}" bindconfirm="confirm" bindinput="change"></input>
+    </view>
+
+    <view>
+      <van-icon name="user-o" size="50rpx" bindtap="goSinger" />
+    </view>
+  </view>
+
+  <!-- 搜索框有内容时弹出层 -->
+  <van-popup show="{{ show }}" custom-style="height:60%;width:650rpx;margin-top:120rpx;box-shadow: 1px 1px 6px 6px #ddd;" position="top" round overlay-style="opacity: 0.3" bind:click-overlay="onClose">
+    <view class="overlay">
+      <view class="search-words">搜索“{{value}}”</view>
+      <view class="search-word" wx:for="{{suggestion}}" wx:key="index">
+        <view bindtap="suggestion" data-value="{{item.keyword}}">
+          <van-icon name="search" size="40rpx" /> {{item.keyword}}
+        </view>
+      </view>
+    </view>
+
+
+  </van-popup>
+
+
+
+  <!-- //可滚动内容 -->
+  <scroll-view scroll-y="true" style="height: 950rpx;">
+    <!-- 图片 -->
+    <view>
+      <image class="search-imageUrl" src="{{image.imageUrl}}"></image>
+    </view>
+
+
+    <!-- 历史记录 -->
+    <view wx:if="{{historyWors.length>0}}">
+      <view class="history">
+        <view>历史记录</view>
+        <view bindtap="historyDel">
+          <van-icon name="delete" size="40rpx" />
+        </view>
+      </view>
+
+      <scroll-view scroll-x="true" class="scroll-x">
+
+        <view wx:for="{{historyWors}}" wx:key="index" class="history-keys">
+          <view bindtap="histoyClick" data-historyvalue="{{item}}" class="historyWors">{{item}}</view>
+        </view>
+
+
+      </scroll-view>
+
+    </view>
+
+
+    <!-- 热搜榜 -->
+    <view class="hotList-bang">热搜榜</view>
+    <view>
+      <view wx:for="{{hotList}}" wx:key="index">
+        <view class="hotList-searchWord">
+          <view class="hotList-items" bindtap="hotClick" data-value="{{item.searchWord}}">
+            <view class="hotList-index {{index<3 ? 'fontcolor' : ''}}">{{index+1}}</view>
+            <view>
+              <view>
+                <text class="hotList-index-searchWord {{index<3 ? 'fonts' : ''}}">{{item.searchWord}}</text>
+
+                <image class="hotList-iconUrl" src="{{item.iconUrl}}"></image>
+              </view>
+              <view class="hotList-items-content">{{item.content}}</view>
+            </view>
+          </view>
+          <view class="hotList-score">{{item.score}}</view>
+
+        </view>
+      </view>
+    </view>
+
+
+  </scroll-view>
+</view>

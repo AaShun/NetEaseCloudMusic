@@ -1,0 +1,62 @@
+<view class="login" wx:if="{{!flag}}">
+  <view>登录网易云音乐</view>
+  <view>手机电脑多端同步，尽享海量高品质音乐</view>
+  <view class="button" bindtap="goLogin">立即登录</view>
+</view>
+
+<view wx:if="{{flag}}">
+
+  <view class="userMsg">
+    <view class="mine-user">
+      <view>
+        <image class="userImg" src="{{usermsg.profile.avatarUrl}}"></image>
+      </view>
+      <view class="mine-userName">
+        <view>{{usermsg.profile.nickname}}</view>
+        <view class="mineLv">Lv : {{usermsg.level}}</view>
+      </view>
+    </view>
+    <view class="mine-sighIn" bindtap="signUp"  wx:if="{{!sign}}">签到</view>
+    <view class="mine-bg" wx:if="{{sign}}">已签到</view>
+  </view>
+
+
+
+  <view class="mine-dynamicState">
+    <view>
+      <view>{{dynamic}}</view>
+      <view class="mine-color">动态</view>
+    </view>
+
+    <view>
+      <view>{{follow.length}}</view>
+      <view class="mine-color">关注</view>
+    </view>
+
+    <view>
+      <view>{{fans.length}}</view>
+      <view class="mine-color">粉丝</view>
+    </view>
+
+    <view bindtap="goEdit">
+      <view>
+        <image class="mine-edit" src="../../icons/mine-edit.png"></image>
+      </view>
+      <view class="mine-color">编辑资料</view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class="getOut" bindtap="getOut">退出登录</view>
+
+
+
+
+
+
+
+
+</view>

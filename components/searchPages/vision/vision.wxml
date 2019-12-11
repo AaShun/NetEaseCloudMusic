@@ -1,0 +1,22 @@
+   <view wx:for="{{keysList}}" wx:key="index">
+        <view class="videoList-all">
+          <view class="videoList-vision-img">
+            <image class="videoList-coverUrl" src="{{item.coverUrl}}"></image>
+            <view class="videoList-vision-playtime">
+              <view>
+                <image class="videoList-mlogList--play" src="../../../icons/home-play.png"></image>
+              </view>
+              <view> {{item.playTime}}</view>
+            </view>
+          </view>
+          <view class="videoList-word">
+            <view>{{item.title}}</view>
+            <view class="videoList-creator">
+              <view class="videoList-durationms">{{item.durationms}}</view>
+              <view class="videoList-userName">{{item.creator[0].userName}}</view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>

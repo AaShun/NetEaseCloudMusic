@@ -1,0 +1,33 @@
+<view>
+  <view wx:if="{{show}}">
+
+    <search bind:cel="searchCancel"></search>
+  </view>
+
+
+
+
+  <view wx:if="{{!show}}">
+
+    <view class="search">
+      <view class="musicPavilion">音乐馆</view>
+      <view class="search-body">
+        <van-search value="{{ keyWord }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch" shape="round" bind:focus="onFocus">
+          <view slot="action" bind:tap="onSearch">搜索</view>
+        </van-search>
+      </view>
+      <view class="music-icon">
+        <image src="../../icons/home-music-o.png"></image>
+      </view>
+    </view>
+
+
+    <banner></banner>
+    <homeIcons></homeIcons>
+    <recommend></recommend>
+    <newDish></newDish>
+    <newMusicPower></newMusicPower>
+    <recommendedMusic></recommendedMusic>
+    <recommendedProgram></recommendedProgram>
+  </view>
+</view>

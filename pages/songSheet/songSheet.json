@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-popup": "../../lib/vant/popup/index"
+  },
+  "navigationStyle": "custom"
+}

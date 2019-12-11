@@ -1,0 +1,90 @@
+.login {
+  color: #666;
+  text-align: center;
+  margin: 300rpx 0;
+  line-height: 70rpx;
+}
+
+.button {
+  margin: 90rpx auto;
+  border: 2rpx solid #666;
+  width: 300rpx;
+  border-radius: 40rpx;
+}
+
+.userMsg {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userImg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.mine-user {
+  display: flex;
+  align-items: center;
+}
+
+.mine-userName {
+  margin-left: 40rpx;
+  font-size: 34rpx;
+}
+
+.mineLv {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  background: #ddd;
+  padding: 6rpx 20rpx;
+  border-radius: 20rpx;
+  color: #666;
+  font-style: italic;
+}
+
+.mine-sighIn {
+  border: 2rpx solid #666;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.mine-bg{
+  background: #f29c9f;
+  color: white;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.mine-dynamicState {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.mine-edit {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.mine-color {
+  color: #666;
+  font-size: 26rpx;
+}
+
+.getOut {
+  padding: 20rpx 60rpx;
+  width: 140rpx;
+  text-align: center;
+  margin: 0 auto;
+  border: 2rpx solid #666;
+  margin-top: 180rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+}
